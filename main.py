@@ -41,7 +41,7 @@ def getCurrentGame():
 
 
 def generateWord():
-    url = 'https://random-word-api.herokuapp.com/word'
+    url = 'https://random-word-api.vercel.app/api?words=1'
     try:
         words = requests.get(url)
     except Exception as e:
@@ -141,7 +141,6 @@ def updateDatabase(
     revealedList = ?
     WHERE status = ?"""
     params = (fails, guessedString, revealedString, "inProgress")
-    print("params:", params)
     cur.execute(sql, params)
     con.commit()
 
